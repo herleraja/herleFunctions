@@ -31,8 +31,10 @@ class BasicIfThenElse(BaseTransformer):
     false value: Online
     """
 
-    def __init__(self, conditional_expression, true_value, false_value, output_item=None):
+    def __init__(self, input_items, conditional_expression, true_value, false_value, output_item=None):
         super().__init__()
+
+        self.input_items = input_items
         self.conditional_expression = self.parse_expression(conditional_expression)
         self.true_value = true_value
         self.false_value = false_value
