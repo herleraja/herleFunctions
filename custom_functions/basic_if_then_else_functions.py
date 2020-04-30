@@ -49,6 +49,7 @@ class BasicIfThenElse(BaseTransformer):
     def build_ui(cls):
         # define arguments that behave as function inputs
         inputs = []
+        inputs.append(UIMultiItem('input_items', description="data items that are used in conditional_expression"))
         inputs.append(UIExpression(name='conditional_expression',
                                    description="expression that returns a specified value, eg. if df['temp']>50 then Offline else Online"))
         inputs.append(UISingle(name='true_value', description="value when true, eg. Offline"))

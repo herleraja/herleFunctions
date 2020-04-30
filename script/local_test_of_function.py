@@ -40,6 +40,7 @@ This file will be written to the working directory.
 '''
 
 from custom_functions.helloworld_functions import HelloWorld
+from custom_functions.basic_if_then_else_functions import BasicIfThenElse
 
 fn = HelloWorld(name='AS_Tester', greeting_col='greeting')
 fn.execute_local_test(db=db, db_schema=db_schema)
@@ -48,4 +49,6 @@ fn.execute_local_test(db=db, db_schema=db_schema)
 Register function so that you can see it in the UI
 '''
 
-db.register_functions([HelloWorld])
+#db.register_functions([HelloWorld])
+db.register_functions([BasicIfThenElse])
+#db.unregister_functions([BasicIfThenElse])
