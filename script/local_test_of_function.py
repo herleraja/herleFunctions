@@ -18,7 +18,7 @@ Place your credentials in a separate file that you don't check into the repo.
 
 '''
 
-with open('credentials_mas_dscmonws1.json', encoding='utf-8') as F:
+with open('credentials.json', encoding='utf-8') as F:
     credentials = json.loads(F.read())
 db_schema = None
 db = Database(credentials=credentials)

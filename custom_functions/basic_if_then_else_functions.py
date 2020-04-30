@@ -26,9 +26,9 @@ class BasicIfThenElse(BaseTransformer):
     When the conditional expression returns a True value, return the true_value.
 
     Example:
-    conditional_expression: df['temp'] > 50
-    true value: Offline
-    false value: Online
+    if_conditional_expression: df['temp'] > 50
+    then_true_value : Offline
+    else_false_value : Online
     """
 
     def __init__(self, input_items, if_conditional_expression, then_true_value, else_false_value, output_item=None):
