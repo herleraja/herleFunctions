@@ -18,7 +18,7 @@ Place your credentials in a separate file that you don't check into the repo.
 
 '''
 
-with open('credentials_mas_dscmonws1.json', encoding='utf-8') as F:
+with open('credentials.json', encoding='utf-8') as F:
     credentials = json.loads(F.read())
 db_schema = None
 db = Database(credentials=credentials)
@@ -39,16 +39,17 @@ This file will be written to the working directory.
 
 '''
 
-from custom_functions.helloworld_functions import HelloWorld
+from custom_functions.upsert_deviceid_from_other_entity_type import PopulatePropertyFromDimensionAPI
 from custom_functions.basic_if_then_else_functions import BasicIfThenElse
 
-fn = HelloWorld(name='AS_Tester', greeting_col='greeting')
+fn = PopulatePropertyFromDimensionAPI(entity_type_name='AmirthDeviceType1', comparision_property='serialNumber',
+                                      insertion_property='deviceid', output_item='Test')
 fn.execute_local_test(db=db, db_schema=db_schema)
 
 '''
 Register function so that you can see it in the UI
 '''
 
-#db.register_functions([HelloWorld])
-db.register_functions([BasicIfThenElse])
-#db.unregister_functions([BasicIfThenElse])
+# db.register_functions([HelloWorld])
+# db.register_functions([PopulatePropertyFromDimensionAPI])
+# db.unregister_functions([BasicIfThenElse])
