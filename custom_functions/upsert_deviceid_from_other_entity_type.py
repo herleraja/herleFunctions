@@ -73,8 +73,8 @@ class PopulatePropertyFromDimensionAPI(BaseTransformer):
         # define arguments that behave as function inputs
         inputs = []
         inputs.append(UISingle(name='entity_type_name', description="Name of the entity type"))
-        inputs.append(UISingle(name='comparision_property',
-                               description='Name of a property in dimension api on which comparison is done'))
+        inputs.append(UISingleItem(name='comparision_property',
+                                   description='Name of a property in dimension api on which comparison is done'))
         inputs.append(UISingle(name='insertion_property',
                                description='Name of a property in dimension api which will be inserted into output on successful comparison is done'))
         # define arguments that behave as function outputs
