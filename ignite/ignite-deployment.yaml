@@ -16,12 +16,12 @@ spec:
       containers:
         # Custom Ignite pod name.
         - name: ignite-node
-          image: apacheignite/ignite:2.5.0
+          image: apacheignite/ignite:2.8.1
           env:
             - name: OPTION_LIBS
               value: ignite-kubernetes
             - name: CONFIG_URI
-              value: https://raw.githubusercontent.com/apache/ignite/master/modules/kubernetes/config/example-kube-rbac.xml
+              value: https://github.com/herleraja/herleFunctions/blob/master/ignite/example-kube-rbac.xml
           ports:
             # Ports to open.
             # Might be optional depending on your Kubernetes environment.
